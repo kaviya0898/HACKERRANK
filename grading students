@@ -1,0 +1,27 @@
+ ArrayList<Integer> result=new ArrayList<Integer>();
+        int count=1;
+        for(int i=0;i<grades.size();)
+        {
+            if(grades.get(i)<40)
+            {
+                result.add(grades.get(i));
+            }
+            if((grades.get(i)+count)%5==0)
+            {
+                if((grades.get(i)+count-grades.get(i))<3)
+                {
+                    result.add(grades.get(i)+count);
+                    i++;
+                    count++;
+                }
+                else{
+                    result.add(grades.get(i));
+                }
+            }
+            else{
+                count++;
+                continue;
+            }
+        }
+        return result;
+    }
